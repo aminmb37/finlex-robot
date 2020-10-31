@@ -1,0 +1,429 @@
+{
+	"info": {
+		"_postman_id": "07da7a8e-3abc-4b84-9799-1781de8d2abb",
+		"name": "finlex",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "listRobots",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/robots",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"robots"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getRobotById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/robots/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"robots",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "saveRobot",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Second Robot\",\r\n    \"x\": 3,\r\n    \"y\": 7,\r\n    \"direction\": \"down\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/robots",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"robots"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteRobot",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/robots/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"robots",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateRobot",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"ss Rbot\",\r\n    \"x\": 2,\r\n    \"y\": 1,\r\n    \"direction\": \"up\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/robots/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"robots",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "moveRight",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"step\": 2\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000//api/v1/robots/1/moveright",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"",
+						"api",
+						"v1",
+						"robots",
+						"1",
+						"moveright"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "moveLeft",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"step\": 2\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000//api/v1/robots/1/moveleft",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"",
+						"api",
+						"v1",
+						"robots",
+						"1",
+						"moveleft"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "moveForward",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"step\": 2\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000//api/v1/robots/1/moveforward",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"",
+						"api",
+						"v1",
+						"robots",
+						"1",
+						"moveforward"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "moveBackward",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"step\": 2\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000//api/v1/robots/1/movebackward",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"",
+						"api",
+						"v1",
+						"robots",
+						"1",
+						"movebackward"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "turnRight",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000//api/v1/robots/1/turnright",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"",
+						"api",
+						"v1",
+						"robots",
+						"1",
+						"turnright"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "turnLeft",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000//api/v1/robots/1/turnleft",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"",
+						"api",
+						"v1",
+						"robots",
+						"1",
+						"turnleft"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "turnBack",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000//api/v1/robots/1/turnback",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"",
+						"api",
+						"v1",
+						"robots",
+						"1",
+						"turnback"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listCommands",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/commands",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"commands"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "saveCommand",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cmdtype\": \"turnright\",\r\n    \"xbfr\": 0,\r\n    \"ybfr\": 0,\r\n    \"xaftr\": 2,\r\n    \"yaftr\": 0,\r\n    \"robot_id\": 1\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/commands",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"commands"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

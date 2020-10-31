@@ -1,0 +1,468 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/commands":
+    get:
+      summary: Retrieves all commands
+      tags:
+      - Commands
+      responses:
+        '422':
+          description: invalid request
+          content: {}
+    post:
+      summary: Creates a command
+      tags:
+      - Commands
+      parameters: []
+      responses:
+        '201':
+          description: command created
+          content: {}
+        '422':
+          description: invalid request
+          content: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cmdtype:
+                  type: string
+                step:
+                  type: integer
+                xbfr:
+                  type: integer
+                ybfr:
+                  type: integer
+                xaftr:
+                  type: integer
+                yaftr:
+                  type: integer
+                robot_id:
+                  type: integer
+              required:
+              - id
+              - cmdtype
+              - step
+              - xbfr
+              - ybfr
+              - xaftr
+              - yaftr
+              - robot_id
+  "/robots":
+    get:
+      summary: Retrieves all robots
+      tags:
+      - Robots
+      responses:
+        '422':
+          description: invalid request
+          content: {}
+    post:
+      summary: Creates a robot
+      tags:
+      - Robots
+      parameters: []
+      responses:
+        '201':
+          description: robot created
+          content: {}
+        '422':
+          description: invalid request
+          content: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                x:
+                  type: integer
+                y:
+                  type: integer
+                direction:
+                  type: string
+              required:
+              - name
+              - x
+              - y
+              - direction
+  "/robots/{id}":
+    get:
+      summary: Retrieves a robot
+      tags:
+      - Robots
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: robot found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  x:
+                    type: integer
+                  y:
+                    type: integer
+                  direction:
+                    type: string
+                required:
+                - id
+                - name
+                - x
+                - y
+                - direction
+        '404':
+          description: robot not found
+          content: {}
+        '406':
+          description: unsupported accept header
+          content: {}
+    put:
+      summary: Updates a robot
+      tags:
+      - Robots
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: robot updated
+          content: {}
+        '404':
+          description: robot not found
+          content: {}
+        '406':
+          description: unsupported accept header
+          content: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                x:
+                  type: integer
+                y:
+                  type: integer
+                direction:
+                  type: string
+              required:
+              - name
+              - x
+              - y
+              - direction
+    delete:
+      summary: Deletes a robot
+      tags:
+      - Robots
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: robot deleted
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  x:
+                    type: integer
+                  y:
+                    type: integer
+                  direction:
+                    type: string
+                required:
+                - id
+                - name
+                - x
+                - y
+                - direction
+        '404':
+          description: robot not found
+          content: {}
+        '406':
+          description: unsupported accept header
+          content: {}
+  "/robots/{id}/moveright":
+    put:
+      summary: Moves a robot to the right
+      tags:
+      - Robots
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: robot moved
+          content: {}
+        '404':
+          description: robot not found
+          content: {}
+        '406':
+          description: unsupported accept header
+          content: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                step:
+                  type: integer
+              required:
+              - step
+  "/robots/{id}/moveleft":
+    put:
+      summary: Moves a robot to the left
+      tags:
+      - Robots
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: robot moved
+          content: {}
+        '404':
+          description: robot not found
+          content: {}
+        '406':
+          description: unsupported accept header
+          content: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                step:
+                  type: integer
+              required:
+              - step
+  "/robots/{id}/moveforward":
+    put:
+      summary: Moves a robot forward
+      tags:
+      - Robots
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: robot moved
+          content: {}
+        '404':
+          description: robot not found
+          content: {}
+        '406':
+          description: unsupported accept header
+          content: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                step:
+                  type: integer
+              required:
+              - step
+  "/robots/{id}/movebackward":
+    put:
+      summary: Moves a robot backward
+      tags:
+      - Robots
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: robot moved
+          content: {}
+        '404':
+          description: robot not found
+          content: {}
+        '406':
+          description: unsupported accept header
+          content: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                step:
+                  type: integer
+              required:
+              - step
+  "/robots/{id}/turnright":
+    put:
+      summary: Turns a robot to the right
+      tags:
+      - Robots
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: robot turned
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  x:
+                    type: integer
+                  y:
+                    type: integer
+                  direction:
+                    type: string
+                required:
+                - id
+                - name
+                - x
+                - y
+                - direction
+        '404':
+          description: robot not found
+          content: {}
+        '406':
+          description: unsupported accept header
+          content: {}
+  "/robots/{id}/turnleft":
+    put:
+      summary: Turns a robot to the left
+      tags:
+      - Robots
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: robot turned
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  x:
+                    type: integer
+                  y:
+                    type: integer
+                  direction:
+                    type: string
+                required:
+                - id
+                - name
+                - x
+                - y
+                - direction
+        '404':
+          description: robot not found
+          content: {}
+        '406':
+          description: unsupported accept header
+          content: {}
+  "/robots/{id}/turnback":
+    put:
+      summary: Turns a robot back
+      tags:
+      - Robots
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: robot turned
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  x:
+                    type: integer
+                  y:
+                    type: integer
+                  direction:
+                    type: string
+                required:
+                - id
+                - name
+                - x
+                - y
+                - direction
+        '404':
+          description: robot not found
+          content: {}
+        '406':
+          description: unsupported accept header
+          content: {}
+servers:
+- url: http://localhost:3000/api/v1/
+  variables:
+    defaultHost:
+      default: http://localhost:3000/api/v1/

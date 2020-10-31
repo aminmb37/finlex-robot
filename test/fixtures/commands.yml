@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cmdtype: MyString
+  step: 1
+  xbfr: 1
+  ybfr: 1
+  xaftr: 1
+  yaftr: 1
+  robot: one
+
+two:
+  cmdtype: MyString
+  step: 1
+  xbfr: 1
+  ybfr: 1
+  xaftr: 1
+  yaftr: 1
+  robot: two
